@@ -14,10 +14,19 @@ namespace WordUnscrambler
             //declare a string[] to hold the content of the file
             string[] content = File.ReadAllLines(filename);
             //try/catch
-            //read from the file - ReadAllLines()
 
-            //yoyoyoyo  this is a tesst
-            //another test
+            try
+            {
+                Console.Read();
+                //read from the file - ReadAllLines()
+            }
+            catch
+            {
+                Console.WriteLine("Error");
+            }
+            
+
+
 
             return content;
         }
