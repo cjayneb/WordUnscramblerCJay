@@ -32,11 +32,20 @@ namespace WordUnscrambler
                         //sort both character arrays (Array.Sort())
                         //act -> sort -> act
                         //cat -> sort -> act
+                        Array.Sort(scrambledWordChar);
+                        Array.Sort(wordChar);
 
                         //convert arrays back to a string
+                        string scrambledWordStr = scrambledWord.ToString();
+                        string wordStr = wordChar.ToString();
 
                         //compare the two strings
                         //if equal, add to List
+                        if (scrambledWordStr.Equals(wordStr))
+                        {
+                            matchedWords.Add(BuilMatchedWord(scrambledWord, word));
+                        }
+                        //not sure if we have to put an else here
                     }
                 }
             }
