@@ -11,24 +11,28 @@ namespace WordUnscrambler
     {
         public string[] Read(string filename)
         {
-            //declare a string[] to hold the content of the file
-            string[] content = File.ReadAllLines(filename);
-            //try/catch
 
+            //declare a string[] to hold the content of the file
+            string[] content = null;
+
+
+                 //try/catch
             try
             {
-                Console.Read();
                 //read from the file - ReadAllLines()
-            }
-            catch
-            {
-                Console.WriteLine("Error");
-            }
-            
+                content = File.ReadAllLines(filename);
 
+            }
+            catch(Exception ex)
+            {
+              Console.WriteLine("Error" + ex.Message);
+            }
 
 
             return content;
+
+
         }
+
     }
 }

@@ -12,9 +12,11 @@ namespace WordUnscrambler
 
         private static readonly FileReader _fileReader = new FileReader();
         private static readonly WordMatcher _wordMatcher = new WordMatcher();
+        public static  Constants constant = new Constants();
 
         static void Main(string[] args)
         {
+            
             try
             {
                 Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
@@ -58,13 +60,20 @@ namespace WordUnscrambler
 
         private static void ExecuteScrambledWordsInFileScenario()
         {
-            string filename = Console.ReadLine();
+            try
+            {
+                string filename = Console.ReadLine();
 
-            //read words from file and store in string[] scrambleWords
-            string[] scrambledWords = _fileReader.Read(filename);
+                //read words from file and store in string[] scrambleWords
+                string[] scrambledWords = _fileReader.Read(filename);
 
-            //display the matched words
-            DisplayMatchedUnscrambledWords(scrambledWords);
+                //display the matched words
+                DisplayMatchedUnscrambledWords(scrambledWords);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("The program ran into an error: " + ex.Message);
+            }
         }
 
         private static void DisplayMatchedUnscrambledWords(string[] scrambledWords)
@@ -84,12 +93,13 @@ namespace WordUnscrambler
                 foreach(var matchedWord in matchedWords)
                 {
                     //MATCH FOUND FOR act: cat
+                    Console.WriteLine("MATCH FOUND FOR " + scrambledWords + " : " + matchedWord);
                 }
 
             }
             else
             {
-                //NO MATCHES HAVE BEEN FOUND
+                Console.WriteLine("NO MATCHES HAVE BEEN FOUND");
             }
         }
     }
