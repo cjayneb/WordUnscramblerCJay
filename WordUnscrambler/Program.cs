@@ -70,7 +70,7 @@ namespace WordUnscrambler
                 //display the matched words
                 DisplayMatchedUnscrambledWords(scrambledWords);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("The program ran into an error: " + ex.Message);
             }
@@ -94,12 +94,14 @@ namespace WordUnscrambler
                 {
                     //MATCH FOUND FOR act: cat
                     Console.WriteLine("MATCH FOUND FOR " + matchedWord.ScrambledWord + ": " + matchedWord.Word);
+                    Console.ReadLine();
                 }
 
             }
             else
             {
                 Console.WriteLine("NO MATCHES HAVE BEEN FOUND");
+                Console.ReadLine();
             }
         }
     }
