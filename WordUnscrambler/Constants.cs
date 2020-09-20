@@ -10,15 +10,21 @@ namespace WordUnscrambler
     class Constants
     {
         
-        public string InitialMessage = "Enter scrambled word(s) manually or as a file: F - file / M - manual";
+        public string initialMessage = "Enter scrambled word(s) manually or as a file: F - file / M - manual";
 
-        public string ConinueChoiceMessage = "Would you like to continue? Y / N";
+        public string enterFilePath = "Enter file path including file name: ";
 
-        public string ErrorMessage = "The program ran into an error: ";
+        public string manualEntry = "Enter word(s) manually separated by commas: ";
 
-        public string MatchFound = "MATCH FOUND FOR";
+        public string firstEntryError = "Entered option was not recognized.";
 
-        public string MatchNotFound = "NO MATCHES FOUND FOR ";
+        public string continueChoiceMessage = "Would you like to continue? Y / N";
+
+        public string errorMessage = "The program ran into an error: ";
+
+        public string matchFound = "MATCH FOUND FOR";
+
+        public string matchNotFound = "NO MATCHES FOUND FOR ";
 
 
     }

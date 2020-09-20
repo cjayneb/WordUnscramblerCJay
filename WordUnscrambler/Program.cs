@@ -24,36 +24,36 @@ namespace WordUnscrambler
                 string finalAnswer = null;
                 do
                 {
-                    Console.WriteLine(constants.InitialMessage);
+                    Console.WriteLine(constants.initialMessage);
                     string option = Console.ReadLine();
 
                     while (option.ToUpper() != "F" & option.ToUpper() != "M")
                     {
-                        Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
+                        Console.WriteLine(constants.initialMessage);
                         option = Console.ReadLine();
                     }
 
                     switch (option.ToUpper())
                     {
                         case "F":
-                            Console.Write("Enter file path including file name: ");
+                            Console.Write(constants.enterFilePath);
                             //do something
                             ExecuteScrambledWordsInFileScenario();
                             break;
                         case "M":
-                            Console.Write("Enter word(s) manually separated by commas: ");
+                            Console.Write(constants.manualEntry);
                             //do something
                             ExecuteScrambledWordsManualEntryScenario();
                             break;
                         default:
-                            Console.WriteLine("Entered option was not recognized.");
+                            Console.WriteLine(constants.firstEntryError);
                             break;
                             //this default case will never execute since we have the while loop making sure the first entry is an 'm' or an 'f'
                     }
 
                     do
                     {
-                        Console.WriteLine(constants.ConinueChoiceMessage);
+                        Console.WriteLine(constants.continueChoiceMessage);
                         finalAnswer = Console.ReadLine();
                     } while (finalAnswer.ToUpper() != "N" & finalAnswer.ToUpper() != "Y");
                     
@@ -62,7 +62,7 @@ namespace WordUnscrambler
 
             } catch(Exception ex)
             {
-                Console.WriteLine(constants.ErrorMessage + ex.Message);
+                Console.WriteLine(constants.errorMessage + ex.Message);
             }
         }
 
@@ -91,7 +91,7 @@ namespace WordUnscrambler
             }
             catch (Exception ex)
             {
-                Console.WriteLine(constants.ErrorMessage + ex.Message);
+                Console.WriteLine(constants.errorMessage + ex.Message);
             }
         }
 
@@ -112,13 +112,13 @@ namespace WordUnscrambler
                 foreach(var matchedWord in matchedWords)
                 {
                     //MATCH FOUND FOR act: cat
-                    Console.WriteLine(constants.MatchFound + matchedWord.ScrambledWord + ": " + matchedWord.Word);
+                    Console.WriteLine(constants.matchFound + matchedWord.ScrambledWord + ": " + matchedWord.Word);
                 }
 
             }
             else
             {
-                Console.WriteLine(constants.MatchNotFound);
+                Console.WriteLine(constants.matchNotFound);
             }
         }
     }
