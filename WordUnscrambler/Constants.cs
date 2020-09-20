@@ -4,18 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace WordUnscrambler
 {
     class Constants
     {
         
-        public string InitialMessage()
-        {
-            string initialMessage = ("Enter scrambled word(s) manually or as a file: F - file / M - manual");
-            return initialMessage;
-        }
+        public string InitialMessage = "Enter scrambled word(s) manually or as a file: F - file / M - manual";
 
+        public string ConinueChoiceMessage = "Would you like to continue? Y / N";
 
+        public string ErrorMessage = "The program ran into an error: ";
 
 
     }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace WordUnscrambler
 {
     class Program
@@ -23,10 +24,10 @@ namespace WordUnscrambler
                 string finalAnswer = null;
                 do
                 {
-                    Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
+                    Console.WriteLine(constants.InitialMessage);
                     string option = Console.ReadLine();
 
-                    while (option != "F" & option != "M" & option != "f" & option != "m")
+                    while (option.ToUpper() != "F" & option.ToUpper() != "M")
                     {
                         Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
                         option = Console.ReadLine();
@@ -52,7 +53,7 @@ namespace WordUnscrambler
 
                     do
                     {
-                        Console.WriteLine("Would you like to continue? Y/N");
+                        Console.WriteLine(constants.ConinueChoiceMessage);
                         finalAnswer = Console.ReadLine();
                     } while (finalAnswer.ToUpper() != "N" & finalAnswer.ToUpper() != "Y");
                     
