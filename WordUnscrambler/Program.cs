@@ -98,7 +98,7 @@ namespace WordUnscrambler
         private static void DisplayMatchedUnscrambledWords(string[] scrambledWords)
         {
             //read the list of words in the wordlist.txt file
-            string[] wordList = _fileReader.Read("wordlist.txt");
+            string[] wordList = _fileReader.Read(constants.wordListFile);
 
             //call a word matcher method, to get a list of MatchedWords structs
             List<MatchedWord> matchedWords = _wordMatcher.Match(scrambledWords, wordList);

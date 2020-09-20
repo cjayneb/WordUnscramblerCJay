@@ -26,6 +26,8 @@ namespace WordUnscrambler
 
         public string matchNotFound = "NO MATCHES FOUND FOR ";
 
+        public string wordListFile = "wordlist.txt";
+
 
     }
 }
