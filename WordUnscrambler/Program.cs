@@ -22,15 +22,21 @@ namespace WordUnscrambler
                 Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
                 string option = Console.ReadLine();
 
+                while(option != "F" & option != "M" & option != "f" & option != "m")
+                {
+                    Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
+                    option = Console.ReadLine();
+                }
+
                 switch (option.ToUpper())
                 {
                     case "F":
-                        Console.WriteLine("Enter file path including file name: ");
+                        Console.Write("Enter file path including file name: ");
                         //do something
                         ExecuteScrambledWordsInFileScenario();
                         break;
                     case "M":
-                        Console.WriteLine("Enter word(s) manually separated by commas: ");
+                        Console.Write("Enter word(s) manually separated by commas: ");
                         //do something
                         ExecuteScrambledWordsManualEntryScenario();
                         break;
@@ -94,15 +100,14 @@ namespace WordUnscrambler
                 {
                     //MATCH FOUND FOR act: cat
                     Console.WriteLine("MATCH FOUND FOR " + matchedWord.ScrambledWord + ": " + matchedWord.Word);
-                    Console.ReadLine();
                 }
 
             }
             else
             {
                 Console.WriteLine("NO MATCHES HAVE BEEN FOUND");
-                Console.ReadLine();
             }
+            Console.ReadLine();
         }
     }
 }

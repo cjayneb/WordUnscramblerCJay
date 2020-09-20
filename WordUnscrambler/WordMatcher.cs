@@ -36,8 +36,17 @@ namespace WordUnscrambler
                         Array.Sort(wordChar);
 
                         //convert arrays back to a string
-                        string scrambledWordStr = scrambledWord.ToString();
-                        string wordStr = wordChar.ToString();
+                        string scrambledWordStr = "";
+                        string wordStr = "";
+
+                        foreach(char character in scrambledWordChar)
+                        {
+                            scrambledWordStr += character;
+                        }
+                        foreach (char character in wordChar)
+                        {
+                            wordStr += character;
+                        }
 
                         //compare the two strings
                         //if equal, add to List
