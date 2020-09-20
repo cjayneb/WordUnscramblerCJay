@@ -20,9 +20,9 @@ namespace WordUnscrambler
 
         public string continueChoiceMessage = "Would you like to continue? Y / N";
 
-        public string errorMessage = "The program ran into an error: ";
+        public string errorMessage = "An unexpected error has occured, please restart your program.";
 
-        public string matchFound = "MATCH FOUND FOR";
+        public string matchFound = "MATCH FOUND FOR ";
 
         public string matchNotFound = "NO MATCHES FOUND FOR ";
 

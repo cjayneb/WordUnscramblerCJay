@@ -112,7 +112,7 @@ namespace WordUnscrambler
                 foreach(var matchedWord in matchedWords)
                 {
                     //MATCH FOUND FOR act: cat
-                    Console.WriteLine(constants.matchFound + matchedWord.ScrambledWord + ": " + matchedWord.Word);
+                    Console.WriteLine(constants.matchFound + matchedWord.ScrambledWord + " : " + matchedWord.Word);
                 }
 
             }

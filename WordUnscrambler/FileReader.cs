@@ -9,6 +9,8 @@ namespace WordUnscrambler
 {
     class FileReader
     {
+        public static Constants constants = new Constants();
+
         public string[] Read(string filename)
         {
 
@@ -25,7 +27,7 @@ namespace WordUnscrambler
             }
             catch(Exception ex)
             {
-              Console.WriteLine("Error: " + ex.Message);
+              Console.WriteLine(constants.errorMessage + ex.Message);
             }
 
 
