@@ -12,39 +12,51 @@ namespace WordUnscrambler
 
         private static readonly FileReader _fileReader = new FileReader();
         private static readonly WordMatcher _wordMatcher = new WordMatcher();
-        public static  Constants constant = new Constants();
+        public static  Constants constants = new Constants();
+        
 
         static void Main(string[] args)
         {
             
             try
             {
-                Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
-                string option = Console.ReadLine();
-
-                while(option != "F" & option != "M" & option != "f" & option != "m")
+                string finalAnswer = null;
+                do
                 {
                     Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
-                    option = Console.ReadLine();
-                }
+                    string option = Console.ReadLine();
 
-                switch (option.ToUpper())
-                {
-                    case "F":
-                        Console.Write("Enter file path including file name: ");
-                        //do something
-                        ExecuteScrambledWordsInFileScenario();
-                        break;
-                    case "M":
-                        Console.Write("Enter word(s) manually separated by commas: ");
-                        //do something
-                        ExecuteScrambledWordsManualEntryScenario();
-                        break;
-                    default:
-                        Console.WriteLine("Entered option was not recognized.");
-                        break;
-                }
+                    while (option != "F" & option != "M" & option != "f" & option != "m")
+                    {
+                        Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
+                        option = Console.ReadLine();
+                    }
 
+                    switch (option.ToUpper())
+                    {
+                        case "F":
+                            Console.Write("Enter file path including file name: ");
+                            //do something
+                            ExecuteScrambledWordsInFileScenario();
+                            break;
+                        case "M":
+                            Console.Write("Enter word(s) manually separated by commas: ");
+                            //do something
+                            ExecuteScrambledWordsManualEntryScenario();
+                            break;
+                        default:
+                            Console.WriteLine("Entered option was not recognized.");
+                            break;
+                            //this default case will never execute since we have the while loop making sure the first entry is an 'm' or an 'f'
+                    }
+
+                    do
+                    {
+                        Console.WriteLine("Would you like to continue? Y/N");
+                        finalAnswer = Console.ReadLine();
+                    } while (finalAnswer.ToUpper() != "N" & finalAnswer.ToUpper() != "Y");
+                    
+                } while (finalAnswer.ToUpper().Equals("Y"));
 
 
             } catch(Exception ex)
@@ -107,7 +119,6 @@ namespace WordUnscrambler
             {
                 Console.WriteLine("NO MATCHES HAVE BEEN FOUND");
             }
-            Console.ReadLine();
         }
     }
 }
