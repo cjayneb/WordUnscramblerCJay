@@ -16,6 +16,10 @@ namespace WordUnscrambler
 
         public string ErrorMessage = "The program ran into an error: ";
 
+        public string MatchFound = "MATCH FOUND FOR";
+
+        public string MatchNotFound = "NO MATCHES FOUND FOR ";
+
 
     }
 }

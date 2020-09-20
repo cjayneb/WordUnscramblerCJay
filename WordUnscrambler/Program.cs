@@ -62,7 +62,7 @@ namespace WordUnscrambler
 
             } catch(Exception ex)
             {
-                Console.WriteLine("The program ran into an error: " + ex.Message);
+                Console.WriteLine(constants.ErrorMessage + ex.Message);
             }
         }
 
@@ -91,7 +91,7 @@ namespace WordUnscrambler
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The program ran into an error: " + ex.Message);
+                Console.WriteLine(constants.ErrorMessage + ex.Message);
             }
         }
 
@@ -112,13 +112,13 @@ namespace WordUnscrambler
                 foreach(var matchedWord in matchedWords)
                 {
                     //MATCH FOUND FOR act: cat
-                    Console.WriteLine("MATCH FOUND FOR " + matchedWord.ScrambledWord + ": " + matchedWord.Word);
+                    Console.WriteLine(constants.MatchFound + matchedWord.ScrambledWord + ": " + matchedWord.Word);
                 }
 
             }
             else
             {
-                Console.WriteLine("NO MATCHES HAVE BEEN FOUND");
+                Console.WriteLine(constants.MatchNotFound);
             }
         }
     }
